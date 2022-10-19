@@ -1,0 +1,6 @@
+11:36:09 **** Incremental Build of configuration Debug for project parcial 19.10 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcial 19.10.o" "..\\src\\parcial 19.10.c" 
+gcc -o "parcial 19.10.exe" "src\\funciones.o" "src\\parcial 19.10.o" "src\\validaciones.o" 

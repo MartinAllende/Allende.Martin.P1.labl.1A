@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void) {
+
+	setbuf(stdout,NULL);
+
+
+	int eleccion;
+
+	do
+	{
+		getNumero(&eleccion,"\n1.Alta auto\n2.Modificar auto\n3.Baja auto\n4.Listar autos\n5.Listar marcas\n6.Listar colores\n7.Listar servicion\n8.Alta trabajo\n9.Listar trabajo\n10.Salir",10,1);
+
+	}while(eleccion != 20);
+
+
+
+
+	return EXIT_SUCCESS;
+}

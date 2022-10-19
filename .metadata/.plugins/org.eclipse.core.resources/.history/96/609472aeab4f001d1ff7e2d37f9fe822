@@ -1,0 +1,67 @@
+#ifndef FUNCIONES_H_
+#define FUNCIONES_H_
+
+typedef struct
+{
+
+	int dia;
+	int anio;
+	int mes;
+
+}eFecha;
+
+typedef struct
+{
+
+	int idMarca;
+	char descripcion[20];
+
+}eMarca;
+
+typedef struct
+{
+
+	int idColor;
+	char nombreColor[20];
+
+}eColor;
+
+typedef struct
+{
+
+	int idAuto;
+	int idColor;
+	char caja;
+	int isEmpty;
+
+}eAuto;
+
+typedef struct
+{
+
+	int idServicio;
+	char descripcion[25];
+	float precio;
+
+}eServicio;
+
+typedef struct
+{
+
+	int idTrabajo;
+	int idAuto;
+	int idServicio;
+	eFecha fecha;
+
+}eTrabajo;
+
+
+int getNumero(int *destino,char *mensaje,int maximo,int minimo);
+int getString(char destino[],char *mensaje,int tam);
+
+void inicializarEstructura(eAuto autos[],int tamAutos);
+int searchFree(eAuto autos[],int tamAutos);
+int altaAuto(eAuto autos[],int tamAutos);
+
+
+#endif /* FUNCIONES_H_ */

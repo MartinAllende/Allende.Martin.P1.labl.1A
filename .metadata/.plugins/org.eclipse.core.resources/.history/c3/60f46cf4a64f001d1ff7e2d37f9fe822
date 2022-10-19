@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "funciones.h"
+
+int main(void) {
+
+	setbuf(stdout,NULL);
+
+
+	int eleccion;
+
+	do
+	{
+		getNumero(&eleccion,"\n1.Alta auto\n2.Modificar auto\n3.Baja auto\n4.Listar autos\n5.Listar marcas\n6.Listar colores\n7.Listar servicion\n8.Alta trabajo\n9.Listar trabajo\n10.Salir",10,1);
+
+		switch(eleccion)
+		{
+			case 1: printf("alta auto");
+				break;
+			case 2: printf("modificar auto");
+				break;
+			case 3: printf("baja auto");
+				break;
+			case 4: printf("listar auto");
+				break;
+			case 5: printf("listar marcas");
+				break;
+			case 6: printf("Listar colores");
+				break;
+			case 7: printf("Listar servicion");
+				break;
+			case 8: printf("Alta trabajo");
+				break;
+			case 9: printf("Listar trabajo");
+				break;
+		}
+
+	}while(eleccion != 10);
+
+
+
+
+	return EXIT_SUCCESS;
+}
