@@ -11,8 +11,12 @@ int main(void) {
 
 	int eleccion;
 	int flag = 0;
+	int flagTrabajos = 0;
 	int nextLegajoAuto = 1000;
+	int nextLegajoTrabajo = 1000;
 	eAuto autos[1000];
+	eTrabajo trabajos[1000];
+	eFecha fechas[1000];
 	eMarca marcas[5] =
 	{
 			{1000,"Reanult"},
@@ -89,9 +93,26 @@ int main(void) {
 			case 7:
 				listarServicios(servicios,4);
 				break;
-			case 8: printf("Alta trabajo");
+			case 8:
+				if(flag > 0)
+				{
+					altaTrabajo(trabajos,fechas,autos,1000,&nextLegajoTrabajo);
+					flagTrabajos = 1;
+				}
+				else
+				{
+					printf("primero debe ingresar un auto");
+				}
 				break;
-			case 9: printf("Listar trabajo");
+			case 9:
+				if(flagTrabajos > 0)
+				{
+					//nollegue
+				}
+				else
+				{
+					printf("primero debe ingresar un trabajo");
+				}
 				break;
 		}
 

@@ -303,3 +303,48 @@ void buscarColor(char destino[],eColor color[],int tamColor, int tamDestino,int 
 		break;
 	}
 }
+
+int altaTrabajo(eTrabajo trabajos[],eFecha fechas[],eAuto autos[],int TAM,int* nextLegajoTrabajo)
+{
+	int retorno = -1;
+	int i;
+	int auxId;
+
+	if(trabajos != NULL && fechas != NULL && autos != NULL && TAM > 0 && nextLegajoTrabajo != NULL)
+	{
+		for(i=0;i<TAM;i++)
+		{
+			if(trabajos[i].isEmpty == 1)
+			{
+				trabajos[i].idTrabajo = *nextLegajoTrabajo;
+				getNumero(&auxId,"\nIngrese el id de su auto",2000,1000);
+				for(i=0;i<TAM;i++)
+				{
+					if(auxId == autos[i].idAuto)
+					{
+						trabajos[i].idAuto = auxId;
+					}
+					else
+					{
+						printf("\nNo existe ese id");
+						break;
+					}
+				}
+
+				getNumero(&auxId,"\nIngrese el id del servicio\n20000.Lavado\n20001. Pulido\n20002.Encerado\n20003Completo",20003,20000);
+
+				trabajos[i].idServicio = auxId;
+
+				trabajos[i].fecha.dia = rand () % (0-30+1) + 30;
+				trabajos[i].fecha.mes = rand () % (1-12+1) + 12;
+				trabajos[i].fecha.anio = 2022;
+
+				*nextLegajoTrabajo = *nextLegajoTrabajo +1;
+				retorno = 0;
+			}
+		}
+	}
+	return retorno;
+}
+
+

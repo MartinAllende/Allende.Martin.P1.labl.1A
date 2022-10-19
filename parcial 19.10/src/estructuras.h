@@ -53,6 +53,7 @@ typedef struct
 	int idAuto;
 	int idServicio;
 	eFecha fecha;
+	int isEmpty;
 
 }eTrabajo;
 
