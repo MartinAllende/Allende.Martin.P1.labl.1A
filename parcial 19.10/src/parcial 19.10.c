@@ -71,9 +71,10 @@ int main(void) {
 				"\n14.Elegir un color y una marca y contar cuantos autos hay de ese color y esa marca"
 				"\n15.Mostrar la o las marcas más elegidas por los clientes"
 				"\n16.Pedir un auto y mostrar todos los trabajos que se le hicieron al mismo"
-				"\n17.Pedir un servicio y mostrar los autos a los que se realizo ese servicio y la fecha"
-				"\n18.Pedir una fecha y mostrar todos los servicios realizados en la misma"
-				"\n19.Salir",19,1);
+				"\n17.Pedir un auto e informar la suma de los importes que se le hicieron al mismo."
+				"\n18.Pedir un servicio y mostrar los autos a los que se realizo ese servicio y la fecha"
+				"\n19.Pedir una fecha y mostrar todos los servicios realizados en la misma"
+				"\n20.Salir",19,1);
 
 		switch(eleccion)
 		{
@@ -178,7 +179,7 @@ int main(void) {
 			case 13:
 				if(flag > 0)
 				{
-					contarColorYMarca(autos,1000);
+					informarSegunCaja(autos,1000,marcas,5,colores,5,clientes,5);
 				}
 				else
 				{
@@ -188,7 +189,7 @@ int main(void) {
 			case 14:
 				if(flag > 0)
 				{
-					mostraMarcaMasElegida(autos,1000,marcas);
+					contarColorYMarca(autos,1000);
 				}
 				else
 				{
@@ -196,6 +197,16 @@ int main(void) {
 				}
 				break;
 			case 15:
+				if(flag > 0)
+				{
+					mostraMarcaMasElegida(autos,1000,marcas);
+				}
+				else
+				{
+					printf("primero debe ingresar un auto");
+				}
+				break;
+			case 16:
 				if(flagTrabajos > 0)
 				{
 					mostrarTrabajosDeAuto(trabajos,1000,servicios,4);
@@ -205,7 +216,7 @@ int main(void) {
 					printf("primero debe ingresar un trabajo");
 				}
 				break;
-			case 16:
+			case 17:
 				if(flagTrabajos > 0)
 				{
 					sumaImportesDeAuto(trabajos,1000,servicios,4);
@@ -215,7 +226,7 @@ int main(void) {
 					printf("primero debe ingresar un trabajo");
 				}
 				break;
-			case 17:
+			case 18:
 				if(flagTrabajos > 0)
 				{
 					mostrarAutosSegunServicio(trabajos,1000,servicios,4,autos,1000,colores,5,marcas,5,clientes,5);
@@ -225,7 +236,7 @@ int main(void) {
 					printf("primero debe ingresar un trabajo");
 				}
 				break;
-			case 18:
+			case 19:
 				if(flagTrabajos > 0)
 				{
 					mostrarServiciosRealizadosSegunFecha(trabajos,1000,servicios,4);
@@ -237,7 +248,7 @@ int main(void) {
 				break;
 		}
 
-	}while(eleccion != 19);
+	}while(eleccion != 20);
 
 
 

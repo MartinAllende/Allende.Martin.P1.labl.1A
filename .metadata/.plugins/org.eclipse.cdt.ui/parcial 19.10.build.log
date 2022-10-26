@@ -1,7 +1,7 @@
-11:35:43 **** Incremental Build of configuration Debug for project parcial 19.10 ****
+11:55:51 **** Incremental Build of configuration Debug for project parcial 19.10 ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
 gcc -o "parcial 19.10.exe" "src\\funciones.o" "src\\parcial 19.10.o" "src\\validaciones.o" 
 
-11:35:43 Build Finished. 0 errors, 0 warnings. (took 744ms)
+11:55:51 Build Finished. 0 errors, 0 warnings. (took 763ms)
 

@@ -230,5 +230,18 @@ void mostrarAutosSegunServicio(eTrabajo trabajos[],int tamTrabajos,eServicio ser
  * @param tamServicios tamanio del array de servicios
  */
 void mostrarServiciosRealizadosSegunFecha(eTrabajo trabajos[],int tamTrabajos,eServicio servicios[],int tamServicios);
+/**\
+ * funcion que lista los autos por manueles y por automaticos en dos listas distintas
+ * @param autos array donde se encuentras los datos de los trabajos
+ * @param tamAutos tamanio de array de trabajos
+ * @param marcas array donde estan los datos de las marcas
+ * @param tamMarcas tamanio del array de marcas
+ * @param colores array donde estan los datos de los colores
+ * @param tamColores tamanio del array de colores
+ * @param clientes array donde estan los datos de los clientes
+ * @param tamClientes tamanio del array de clientes
+ */
+
+void informarSegunCaja(eAuto autos[],int tamAutos,eMarca marcas[], int tamMarcas, eColor colores[], int tamColores, eCliente clientes[], int tamClientes);
 
 #endif /* FUNCIONES_H_ */

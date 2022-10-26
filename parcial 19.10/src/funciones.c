@@ -801,5 +801,54 @@ void mostrarServiciosRealizadosSegunFecha(eTrabajo trabajos[],int tamTrabajos,eS
 	}
 }
 
+void informarSegunCaja(eAuto autos[],int tamAutos,eMarca marcas[], int tamMarcas, eColor colores[], int tamColores, eCliente clientes[], int tamClientes)
+{
+	int i;
+	char auxMarca[20];
+	char auxColor[20];
+	char auxCliente[20];
+	int flagAuto = 1;
+	int flagManual =1;
 
+	for(i=0;i<tamAutos;i++)
+	{
+		if(autos[i].isEmpty == 0 && autos[i].caja == 'm')
+		{
+			flagAuto = 0;
+			buscarMarca(auxMarca,marcas,tamMarcas,20,autos[i].idMarca);
+			buscarColor(auxColor,colores,tamColores,20,autos[i].idColor);
+			buscarCliente(auxCliente,clientes,tamClientes,20,autos[i].idCliente);
+
+			printf("\n---------------------------------------------------------------------");
+			printf("\n  %4d     %10s          %10s           %c             %10s   ", autos[i].idAuto, auxColor, auxMarca, autos[i].caja,auxCliente);
+		}
+
+	}
+
+	for(i=0;i<tamAutos;i++)
+	{
+		if(autos[i].isEmpty == 0 && autos[i].caja == 'a')
+		{
+			flagManual = 0;
+			buscarMarca(auxMarca,marcas,tamMarcas,20,autos[i].idMarca);
+			buscarColor(auxColor,colores,tamColores,20,autos[i].idColor);
+			buscarCliente(auxCliente,clientes,tamClientes,20,autos[i].idCliente);
+
+			printf("\n---------------------------------------------------------------------");
+			printf("\n  %4d     %10s          %10s           %c             %10s   ", autos[i].idAuto, auxColor, auxMarca, autos[i].caja,auxCliente);
+		}
+
+	}
+
+	if(flagAuto != 0)
+	{
+		printf("\nNo hay automaticos ingresado");
+	}
+	if(flagManual != 0)
+	{
+		printf("\nNo hay manuales ingresados");
+	}
+
+
+}
 
