@@ -53,7 +53,7 @@ int bajaAuto(eAuto autos[],int tamAutos);
  * @param tamColor tamanio del array de colores
  * @return 0 en caso de que se haya podido listar correctamente -1 en caso de que haya habido un error
  */
-int listarAutos(eAuto autos[],int tamAutos,eMarca marcas[],int tamMarcas,eColor colores[],int tamColor);
+int listarAutos(eAuto autos[],int tamAutos,eMarca marcas[],int tamMarcas,eColor colores[],int tamColor,eCliente clientes[], int tamClientes);
 /**
  * funcion para listar las marcas
  * @param marcas array en el cual se encuentras los datos de las marcas cargados
@@ -119,6 +119,116 @@ void listarTrabajos(eTrabajo trabajos[],eServicio servicios[],eFecha fechas[],in
  * @param id id de la cadena que se va a buscar
  */
 void buscarServicio(char destino[],eServicio servicios[],int tamServicios, int tamDestino,int id);
+/**
+ * funcion con la cual se obtiene un id de un color y se lista los autos con ese color
+ * @param autos array donde estan los datos de los autos ingresados
+ * @param colores array donde estan los datos de los colores
+ * @param marcas array donde estan los datos de las marcas
+ * @param clientes array donde estan los datos de los clientes
+ * @param tamAutos tamanio del array de autos
+ * @param tamColor tamanio del array de colores
+ * @param tamMarcas tamanio del array de marcas
+ * @param tamClientes tamanio del array de clientes
+ * @return 0 en caso de que se haya podido listar correctamente -1 en caso contrario
+ */
+int listarColor(eAuto autos[],eColor colores[],eMarca marcas[],eCliente clientes[],int tamAutos,int tamColor,int tamMarcas,int tamClientes);
+/**
+ * funcion para devolver el nombre del cliente al ingresar su id
+ * @param destino puntero donde se va a guardar el nombre
+ * @param clientes array donde estan los datos de los clientes
+ * @param tamClientes tamanio del array de clientes
+ * @param tamCadena tamanio maximo de la cadena
+ * @param id del nombre que se va a buscar
+ */
 
+void buscarCliente(char destino[],eCliente clientes[],int tamClientes,int tamCadena,int id);
+/**
+ * funcion para listar autos segun una marca ingresada
+ * @param autos array donde estan los datos de los autos ingresados
+ * @param colores array donde estan los datos de los colores
+ * @param marcas array donde estan los datos de las marcas
+ * @param clientes array donde estan los datos de los clientes
+ * @param tamAutos tamanio del array de autos
+ * @param tamColor tamanio del array de colores
+ * @param tamMarcas tamanio del array de marcas
+ * @param tamClientes tamanio del array de clientes
+ * @return 0 en caso de que se haya podido listar correctamente -1 en caso contrario
+ */
+
+int listarAutoMarcas(eAuto autos[],eColor colores[],eMarca marcas[],eCliente clientes[],int tamAutos,int tamColor,int tamMarcas,int tamClientes);
+/**
+ * funcion para contar la cantidad de autos automaticos o manuales que hay
+ * @param autos array donde estan los datos de los autos ingresados
+ * @param tamAutos tamanio del array de autos
+ */
+
+void informarManualAutomatico(eAuto autos[],int tamAutos);
+/**
+ * funcion para infomar la cantidad de autos que hay de determinado color y marca
+ * @param autos array donde estan los datos de los autos ingresados
+ * @param tamAutos tamanio del array de autos
+ */
+
+void contarColorYMarca(eAuto autos[],int tamAutos);
+/**
+ * funcion que cuenta los autos de cada marca y muetra la mas elegida
+ * @param autos array donde estan los datos de los autos ingresados
+ * @param tamAutos tamanio del array de autos
+ * @param marcas array donde estan los datos de las marcas
+ */
+
+void mostraMarcaMasElegida(eAuto autos[],int tamAutos,eMarca marcas[]);
+/**
+ * funcion que al ingresar un auto se muetran los trabajos que se le realizaron al mismo
+ * @param trabajos array donde se encuentras los datos de los trabajos
+ * @param tamTrabajos tamanio de array de trabajos
+ * @param servicios array donde se encuentras los datos de los servicios
+ * @param tamServicios tamanio del array de servicios
+ */
+
+void mostrarTrabajosDeAuto(eTrabajo trabajos[],int tamTrabajos,eServicio servicios[], int tamServicios);
+/**
+ * funcion para sumar los importes de los servicios que se le realziaron a un auto determiando
+ * @param trabajos array donde se encuentras los datos de los trabajos
+ * @param tamTrabajos tamanio de array de trabajos
+ * @param servicios array donde se encuentras los datos de los servicios
+ * @param tamServicios tamanio del array de servicios
+ */
+
+void sumaImportesDeAuto(eTrabajo trabajos[],int tamTrabajos,eServicio servicios[],int tamServicios);
+/**
+ * funcion que busca el precio de un servicio y lo escribe en un puntero
+ * @param destino donde se va a guardar el valor del precio del servicio
+ * @param servicios rray donde se encuentras los datos de los servicios
+ * @param tamServicios tamanio del array de servicios
+ * @param id del cual se busca el precio
+ */
+void buscarPrecioServicio(float *destino,eServicio servicios[],int tamServicios,int id);
+/**
+ * funcion para mostrar los autos a los que se le realizo un servicio determinado
+ * @param trabajos array donde se encuentras los datos de los trabajos
+ * @param tamTrabajos tamanio de array de trabajos
+ * @param servicios array donde se encuentras los datos de los servicios
+ * @param tamServicios tamanio del array de servicios
+ * @param autos array donde estan los datos de los autos ingresados
+ * @param tamAutostamanio del array de autos
+ * @param colores array donde estan los datos de los colores
+ * @param tamColores tamanio del array de colores
+ * @param marcas array donde estan los datos de las marcas
+ * @param tamMarcas tamanio del array de marcas
+ * @param clientes array donde estan los datos de los clientes
+ * @param tamClientes tamanio del array de clientes
+ */
+
+void mostrarAutosSegunServicio(eTrabajo trabajos[],int tamTrabajos,eServicio servicios[],int tamServicios,eAuto autos[],int tamAutos,eColor colores[],int tamColores,eMarca marcas[],int tamMarcas,eCliente clientes[],int tamClientes);
+
+/**
+ * se ingresa una fecha y se muestran los servicios que se realizaron en dicha fecha
+ * @param trabajos  array donde se encuentras los datos de los trabajos
+ * @param tamTrabajos tamanio de array de trabajos
+ * @param servicios array donde se encuentras los datos de los servicios
+ * @param tamServicios tamanio del array de servicios
+ */
+void mostrarServiciosRealizadosSegunFecha(eTrabajo trabajos[],int tamTrabajos,eServicio servicios[],int tamServicios);
 
 #endif /* FUNCIONES_H_ */

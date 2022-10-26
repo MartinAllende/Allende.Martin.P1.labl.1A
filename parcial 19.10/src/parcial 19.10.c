@@ -41,13 +41,39 @@ int main(void) {
 			{20002,"Encerado",600},
 			{20003,"Completo",900}
 	};
+	eCliente clientes[5]=
+	{
+			{1000,"juan",'m'},
+			{1001,"alan",'m'},
+			{1002,"pilar",'f'},
+			{1003,"fernanda",'f'},
+			{1004,"carlos",'m'}
+	};
 
 	inicializarAuto(autos,1000);
 	inicializarTrabajos(trabajos,1000);
 
 	do
 	{
-		getNumero(&eleccion,"\n1.Alta auto\n2.Modificar auto\n3.Baja auto\n4.Listar autos\n5.Listar marcas\n6.Listar colores\n7.Listar servicion\n8.Alta trabajo\n9.Listar trabajo\n10.Salir",10,1);
+		getNumero(&eleccion,"\n1.Alta auto"
+				"\n2.Modificar auto"
+				"\n3.Baja auto"
+				"\n4.Listar autos"
+				"\n5.Listar marcas"
+				"\n6.Listar colores"
+				"\n7.Listar servicion"
+				"\n8.Alta trabajo"
+				"\n9.Listar trabajo"
+				"\n10.Mostrar autos del color seleccionado por el usuario"
+				"\n11.Mostrar autos de una marca seleccionada"
+				"\n12.Informar Promedio de autos con caja manual y promedio de autos con caja automática"
+				"\n13.Mostrar un listado de los autos separados por tipo de caja"
+				"\n14.Elegir un color y una marca y contar cuantos autos hay de ese color y esa marca"
+				"\n15.Mostrar la o las marcas más elegidas por los clientes"
+				"\n16.Pedir un auto y mostrar todos los trabajos que se le hicieron al mismo"
+				"\n17.Pedir un servicio y mostrar los autos a los que se realizo ese servicio y la fecha"
+				"\n18.Pedir una fecha y mostrar todos los servicios realizados en la misma"
+				"\n19.Salir",19,1);
 
 		switch(eleccion)
 		{
@@ -82,7 +108,7 @@ int main(void) {
 			case 4:
 				if(flag > 0)
 				{
-					listarAutos(autos,1000,marcas,5,colores,5);
+					listarAutos(autos,1000,marcas,5,colores,5,clientes,5);
 				}
 				else
 				{
@@ -119,9 +145,99 @@ int main(void) {
 					printf("primero debe ingresar un trabajo");
 				}
 				break;
+			case 10:
+				if(flag > 0)
+				{
+					listarColor(autos,colores,marcas,clientes,1000,5,5,5);
+				}
+				else
+				{
+					printf("primero debe ingresar un auto");
+				}
+				break;
+			case 11:
+				if(flag > 0)
+				{
+					listarAutoMarcas(autos,colores,marcas,clientes,1000,5,5,5);
+				}
+				else
+				{
+					printf("primero debe ingresar un auto");
+				}
+				break;
+			case 12:
+				if(flag > 0)
+				{
+					informarManualAutomatico(autos,1000);
+				}
+				else
+				{
+					printf("primero debe ingresar un auto");
+				}
+				break;
+			case 13:
+				if(flag > 0)
+				{
+					contarColorYMarca(autos,1000);
+				}
+				else
+				{
+					printf("primero debe ingresar un auto");
+				}
+				break;
+			case 14:
+				if(flag > 0)
+				{
+					mostraMarcaMasElegida(autos,1000,marcas);
+				}
+				else
+				{
+					printf("primero debe ingresar un auto");
+				}
+				break;
+			case 15:
+				if(flagTrabajos > 0)
+				{
+					mostrarTrabajosDeAuto(trabajos,1000,servicios,4);
+				}
+				else
+				{
+					printf("primero debe ingresar un trabajo");
+				}
+				break;
+			case 16:
+				if(flagTrabajos > 0)
+				{
+					sumaImportesDeAuto(trabajos,1000,servicios,4);
+				}
+				else
+				{
+					printf("primero debe ingresar un trabajo");
+				}
+				break;
+			case 17:
+				if(flagTrabajos > 0)
+				{
+					mostrarAutosSegunServicio(trabajos,1000,servicios,4,autos,1000,colores,5,marcas,5,clientes,5);
+				}
+				else
+				{
+					printf("primero debe ingresar un trabajo");
+				}
+				break;
+			case 18:
+				if(flagTrabajos > 0)
+				{
+					mostrarServiciosRealizadosSegunFecha(trabajos,1000,servicios,4);
+				}
+				else
+				{
+					printf("primero debe ingresar un trabajo");
+				}
+				break;
 		}
 
-	}while(eleccion != 10);
+	}while(eleccion != 19);
 
 
 

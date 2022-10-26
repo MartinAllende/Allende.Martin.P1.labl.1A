@@ -32,6 +32,7 @@ typedef struct
 	int idAuto;
 	int idColor;
 	int idMarca;
+	int idCliente;
 	char caja;
 	int isEmpty;
 
@@ -56,5 +57,13 @@ typedef struct
 	int isEmpty;
 
 }eTrabajo;
+
+typedef struct
+{
+	int idCliente;
+	char nombre[20];
+	char sexo;
+
+}eCliente;
 
 #endif /* ESTRUCTURAS_H_ */
