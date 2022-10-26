@@ -1,7 +1,22 @@
 #ifndef VALIDACIONES_H_
 #define VALIDACIONES_H_
 
+/**
+ * funcion que valida que lo ingresado solo sea un numero
+ * @param destino direccion de memoria en la cual se va a gaurdar es numero
+ * @param mensaje mensaje de lo que se quiera ingresar
+ * @param maximo numero maximo a ingresar
+ * @param minimo numero minimo a ingresar
+ * @return 0 en caso de que se haya podido realizar correctamente -1 en caso de que no
+ */
 int getNumero(int *destino,char *mensaje,int maximo,int minimo);
+/**
+ * funcion que valida que lo ingresado sea un cadena de caracteres solo letras
+ * @param destino direccion de memoria en la cual se va a gaurdar la cadena
+ * @param mensaje mensaje de lo que se quiera ingresar
+ * @param tam tamanio maximo de la cadena
+ * @return 0 en caso de que se haya podido realizar correctamente -1 en caso de que no
+ */
 int getString(char destino[],char *mensaje,int tam);
 
 #endif /* VALIDACIONES_H_ */

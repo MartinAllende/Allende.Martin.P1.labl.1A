@@ -14,6 +14,7 @@ int main(void) {
 	int flagTrabajos = 0;
 	int nextLegajoAuto = 1000;
 	int nextLegajoTrabajo = 1000;
+	int validacion;
 	eAuto autos[1000];
 	eTrabajo trabajos[1000];
 	eFecha fechas[1000];
@@ -42,6 +43,7 @@ int main(void) {
 	};
 
 	inicializarAuto(autos,1000);
+	inicializarTrabajos(trabajos,1000);
 
 	do
 	{
@@ -66,8 +68,11 @@ int main(void) {
 			case 3:
 				if(flag > 0)
 				{
-					bajaAuto(autos,1000);
-					flag = flag - 1;
+					validacion = bajaAuto(autos,1000);
+					if(validacion == 0)
+					{
+						flag = flag - 1;
+					}
 				}
 				else
 				{
@@ -107,7 +112,7 @@ int main(void) {
 			case 9:
 				if(flagTrabajos > 0)
 				{
-					//nollegue
+					listarTrabajos(trabajos,servicios,fechas,1000,4,1000);
 				}
 				else
 				{
